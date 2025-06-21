@@ -1,0 +1,17 @@
+CHIP Decoder4To16{
+
+IN in[4],g;
+OUT f0,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15;
+
+PARTS:
+
+Decoder2To4(in[0]=in[2],in[1]=in[3],g=g,f0=o1,f1=o2,f2=o3,f3=o4);
+Not(in=o1,out=o11);
+Not(in=o2,out=o22);
+Not(in=o3,out=o33);
+Not(in=o4,out=o44);
+Decoder2To4(in[0]=in[0],in[1]=in[1],g=o11,f0=f0,f1=f1,f2=f2,f3=f3);
+Decoder2To4(in[0]=in[0],in[1]=in[1],g=o22,f0=f4,f1=f5,f2=f6,f3=f7);
+Decoder2To4(in[0]=in[0],in[1]=in[1],g=o33,f0=f8,f1=f9,f2=f10,f3=f11);
+Decoder2To4(in[0]=in[0],in[1]=in[1],g=o44,f0=f12,f1=f13,f2=f14,f3=f15);
+}

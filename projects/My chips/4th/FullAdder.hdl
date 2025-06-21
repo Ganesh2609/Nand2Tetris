@@ -1,0 +1,10 @@
+CHIP FullAdder{
+
+IN a,b,c;
+OUT sum,carry;
+
+PARTS:
+
+Mux8Way(a=false,b=true,c=true,d=false,e=true,f=false,g=false,h=true,sel[0]=c,sel[1]=b,sel[2]=a,out=sum);
+Mux8Way(a=false,b=false,c=false,d=true,e=false,f=true,g=true,h=true,sel[0]=c,sel[1]=b,sel[2]=a,out=carry);
+}

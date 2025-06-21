@@ -1,0 +1,13 @@
+CHIP Decoder2To4{
+
+IN in[2],g;
+OUT f0,f1,f2,f3;
+
+PARTS:
+Decoder1To2(in=in[1],g=g,f0=o1,f1=o2);
+Not(in=o1,out=o11);
+Not(in=o2,out=o22);
+Decoder1To2(in=in[0],g=o11,f0=f0,f1=f1);
+Decoder1To2(in=in[0],g=o22,f0=f2,f1=f3);
+}
+

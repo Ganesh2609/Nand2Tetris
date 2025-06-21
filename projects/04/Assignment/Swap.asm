@@ -1,0 +1,16 @@
+@R0
+D=M
+@TEMP
+M=D
+@R1
+D=M
+@R0
+M=D
+@TEMP
+D=M
+@R1
+M=D
+
+(END)
+@END
+0;JMP

@@ -1,0 +1,29 @@
+class Draw{
+
+method void create(int a){
+	do Draw.drawn(a);
+	return;
+}
+
+function void drawn(int location) {
+	var int memAddress;
+	let memAddress = 16384+location;
+	do Memory.poke(memAddress+0, 448);
+	do Memory.poke(memAddress+32, 320);
+	do Memory.poke(memAddress+64, 320);
+	do Memory.poke(memAddress+96, 320);
+	do Memory.poke(memAddress+128, 864);
+	do Memory.poke(memAddress+160, 16252);
+	do Memory.poke(memAddress+192, 10244);
+	do Memory.poke(memAddress+224, 10580);
+	do Memory.poke(memAddress+256, 10580);
+	do Memory.poke(memAddress+288, 16380);
+	do Memory.poke(memAddress+320, 0);
+	do Memory.poke(memAddress+352, 0);
+	do Memory.poke(memAddress+384, 0);
+	do Memory.poke(memAddress+416, 0);
+	do Memory.poke(memAddress+448, 0);
+	do Memory.poke(memAddress+480, 0);
+	return;
+}
+}

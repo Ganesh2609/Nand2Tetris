@@ -1,0 +1,10 @@
+CHIP FullAdder{
+
+IN a,b,c;
+OUT sum,carry;
+
+PARTS:
+Not(in=c,out=c1);
+Mux4Way(a=c,b=c1,c=c1,d=c,sel[0]=b,sel[1]=a,out=sum);
+Mux4Way(a=false,b=c,c=c,d=true,sel[0]=b,sel[1]=a,out=carry);
+}

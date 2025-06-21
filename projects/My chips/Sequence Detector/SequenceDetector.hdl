@@ -1,0 +1,25 @@
+CHIP SequenceDetector{
+
+IN in[16];
+OUT out[16];
+
+PARTS:
+	sq(a=in[0..3],out=out[0]);
+	sq(a=in[1..4],out=out[1]);
+	sq(a=in[2..5],out=out[2]);
+	sq(a=in[3..6],out=out[3]);
+	sq(a=in[4..7],out=out[4]);
+	sq(a=in[5..8],out=out[5]);
+	sq(a=in[6..9],out=out[6]);
+	sq(a=in[7..10],out=out[7]);
+	sq(a=in[8..11],out=out[8]);
+	sq(a=in[9..12],out=out[9]);
+	sq(a=in[10..13],out=out[10]);
+	sq(a=in[11..14],out=out[11]);
+	sq(a=in[12..15],out=out[12]);
+	Not(in=true,out=out[13]);
+	Not(in=true,out=out[14]);
+	Not(in=true,out=out[15]);
+
+
+}

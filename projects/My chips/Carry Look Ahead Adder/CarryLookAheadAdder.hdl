@@ -1,0 +1,38 @@
+CHIP CarryLookAheadAdder {
+	IN a[4],b[4],c0;
+	OUT out[4];
+
+	PARTS: 
+
+	And(a=a[0],b=b[0],out=G0);
+	Xor(a=a[0],b=b[0],out=P0);
+	And(a=a[1],b=b[1],out=G1);
+	Xor(a=a[1],b=b[1],out=P1);
+	And(a=a[2],b=b[2],out=G2);
+	Xor(a=a[2],b=b[2],out=P2);
+
+	And(a=c0,b=P0,out=C0P0);
+	Or(a=C0P0,b=G0,out=C1);
+
+	And(a=G0,b=P1,out=G0P1);
+	And3(a=c0,b=P0,c=P1,out=C0P0P1); 
+	Or3(a=G1,b=G0P1,c=C0P0P1,out=C2);
+
+	And(a=G1,b=P2,out=G1P2);
+	And3(a=G0,b=P1,c=P2,out=G0P1P2);
+	And4(a=c0,b=P0,c=P1,d=P2,out=C0P0P1P2);
+	Or4(a=G2,b=G1P2,c=G0P1P2,d=C0P0P1P2,out=C3);
+
+	Xor3(a=a[0],b=b[0],c=c0,out=out[0]);
+	Xor3(a=a[1],b=b[1],c=C1,out=out[1]);
+	Xor3(a=a[2],b=b[2],c=C2,out=out[2]);
+	Xor3(a=a[3],b=b[3],c=C3,out=out[3]);
+}
+
+	
+
+	
+
+	
+		
+		
